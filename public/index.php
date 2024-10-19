@@ -46,21 +46,35 @@
                 <span class="fw-bold h1" style="color: #D20000;">Today's menu</span>
                 <div class="row card-deck justify-content-center">
 
-                <?php for ($i=0; $i < 16; $i++) { 
-                ?>
-                    <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
-                        <img src="../assets/images/photo-1615719413546-198b25453f85.png" class="card-img-top item-display-image" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold" style="color: #D20000;">Chicken Meal</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                    <?php for ($i = 0; $i < 16; $i++) {
+                    ?>
+                        <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
+                            <img src="../assets/images/photo-1615719413546-198b25453f85.png" class="card-img-top item-display-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold" style="color: #D20000;">Chicken Meal</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
+                            </div>
                         </div>
-                    </div>
                     <?php
-                    } 
+                    }
                     ?>
                 </div>
+            </div>
+        </section>
+        <section id="about-us">
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="../assets/images/undraw_online_groceries_a02y 1.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <span class="fw-bold h1" style="color: #D20000;">About Us</span>
+                        <p class="lead">We offers a fast and convenient way to get your meals on campus. With a user-friendly interface, you can browse the menu, customize your order, and select a pick-up time that suits you - all from your phone or computer.
 
+                            Say goodbye to long lines and waiting times; the system ensures your meal is ready when you are, making campus dining more efficient and enjoyable.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

@@ -4,12 +4,13 @@
     position: relative;
 }
 
-#hero .surround{
+#hero .surround {
     border: 1px solid #FFFF00;
     margin-top: 150px;
     padding: 20px;
     display: inline-block;
 }
+
 #hero-bg {
     height: 100vh;
     width: 100%;
@@ -19,6 +20,11 @@
     position: absolute;
 }
 
-#navigation-bar{
+#navigation-bar {
     z-index: 100;
+}
+
+.item-display-image {
+    width: 100%;
+    height: 150px;
 }

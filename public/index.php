@@ -26,9 +26,10 @@
                     <li class="nav-item"><a href="" class="nav-link text-light">Logout</a></li>
                 </ul>
             </div>
-        </nav></header>
+        </nav>
+    </header>
     <main>
-        
+
         <section id="hero">
             <!-- <div class="row align-content-center"></div> -->
             <div class="container d-flex justify-content-center align-items-center">
@@ -38,6 +39,27 @@
                     <p class="lead text-light">Your favourite meals are just a click away</p>
                 </div>
             </div>
+        </section>
+
+        <section id="today-menu">
+            <div class="container-sm">
+                <span class="fw-bold h1" style="color: #D20000;">Today's menu</span>
+                <div class="row card-deck justify-content-center">
+
+                <?php for ($i=0; $i < 16; $i++) { 
+                ?>
+                    <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
+                        <img src="../assets/images/photo-1615719413546-198b25453f85.png" class="card-img-top item-display-image" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #D20000;">Chicken Meal</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                    <?php
+                    } 
+                    ?>
+                </div>
 
             </div>
         </section>

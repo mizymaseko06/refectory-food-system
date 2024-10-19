@@ -1,0 +1,24 @@
+#hero {
+    height: 100vh;
+    z-index: 2;
+    position: relative;
+}
+
+#hero .surround{
+    border: 1px solid #FFFF00;
+    margin-top: 150px;
+    padding: 20px;
+    display: inline-block;
+}
+#hero-bg {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    object-fit: cover;
+    aspect-ratio: initial;
+    position: absolute;
+}
+
+#navigation-bar{
+    z-index: 100;
+}

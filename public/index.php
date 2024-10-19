@@ -21,6 +21,26 @@
         <section id="today-menu">
             <div class="container-sm">
                 <span class="fw-bold h1" style="color: #D20000;">Today's menu</span>
+                <ul class="nav nav-pills justify-content-center mt-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Recommended for you</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Breakfast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lunch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Drinks</a>
+                    </li>
+                </ul>
                 <div class="row card-deck justify-content-center">
 
                     <?php for ($i = 0; $i < 16; $i++) {
@@ -89,6 +109,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    </body>
 
 </html>

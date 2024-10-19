@@ -70,6 +70,7 @@
                         <p class="lead">We offer a fast and convenient way to get your meals on campus. With a user-friendly interface, you can browse the menu, customize your order, and select a pick-up time that suits you - all from your phone or computer.
 
                             Say goodbye to long lines and waiting times; the system ensures your meal is ready when you are, making campus dining more efficient and enjoyable.</p>
+                            
                     </div>
                 </div>
             </div>

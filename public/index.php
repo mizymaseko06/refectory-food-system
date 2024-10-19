@@ -14,7 +14,10 @@
 <body>
     <header><img id="hero-bg" src="../assets/images/photo-1615719413546-198b25453f85.png" alt="">
         <nav class="navbar navbar-dark navbar-expand-lg container" id="navigation-bar">
-            <a href="" class="navbar-brand"><img src="../assets/images/University_of_Eswatini_logo 1.png" alt=""> <span style="color: #FFFF00">University of Eswatini</span></a>
+            <a href="" class="navbar-brand d-flex flex-row align-content-center justify-content-center">
+                <img src="../assets/images/University_of_Eswatini_logo 1.png" style="aspect-ratio: initial;" height="30px;" alt="">
+                <div class="d-flex flex-column"><span style="color: #FFFF00; font-size: 15px;">University of Eswatini</span><span style="color: #FFFF00; font-size: 15px;">Refectory Ordering System</span></div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -62,15 +65,15 @@
                 </div>
             </div>
         </section>
-        <section id="about-us">
+        <section id="about-us" class="m-5">
             <div class="container-sm">
-                <div class="row">
-                    <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-lg-4 text-sm-center text-lg-end">
                         <img src="../assets/images/undraw_online_groceries_a02y 1.png" alt="">
                     </div>
-                    <div class="col-12">
+                    <div class="col-sm-12 col-lg-4 text-sm-center text-lg-start">
                         <span class="fw-bold h1" style="color: #D20000;">About Us</span>
-                        <p class="lead">We offers a fast and convenient way to get your meals on campus. With a user-friendly interface, you can browse the menu, customize your order, and select a pick-up time that suits you - all from your phone or computer.
+                        <p class="lead">We offer a fast and convenient way to get your meals on campus. With a user-friendly interface, you can browse the menu, customize your order, and select a pick-up time that suits you - all from your phone or computer.
 
                             Say goodbye to long lines and waiting times; the system ensures your meal is ready when you are, making campus dining more efficient and enjoyable.</p>
                     </div>
@@ -78,6 +81,37 @@
             </div>
         </section>
     </main>
+    <footer style="background-color: #001C81;">
+        <div class="container-sm justify-content-center" style="color: white;">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-4">
+                    <a href="" class="navbar-brand d-flex flex-row">
+                        <img src="../assets/images/University_of_Eswatini_logo 1.png" style="aspect-ratio: initial;" height="30px;" alt="">
+                        <div class="d-flex flex-column fw-bold"><span style="color: #FFFF00; font-size: 15px;">University of Eswatini</span><span class="fw-bold" style="color: #FFFF00; font-size: 15px;">Refectory Ordering System</span></div>
+                    </a>
+                    <span>This system is owned and operated by University of Eswatini. All content and services are for exclusive use by students and staff</span>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 pt-4">
+                    <h6 class="fw-bold" style="color: #FFFF00;">Information</h6>
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+
+                </div>
+                <div class="col-sm-6 col-lg-3 pt-4">
+                    <h6 class="fw-bold" style="color: #FFFF00;">Get in touch with us</h6>
+                    <span>refectory@uniswa.sz</span>
+                    <span>+268 2518 1234</span>
+
+                </div>
+            </div>
+            <p id="copyright-message" class="text-center p-5" style="color:#FFFF00; font-size: 10px;">© 2024 University of Eswatini Refectory Ordering System. All Rights Reserved.</p>
+
+
+
+
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

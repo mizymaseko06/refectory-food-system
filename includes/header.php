@@ -8,15 +8,6 @@
 
 <body>
     <header>
-        <?php
-        $current_file =  basename($_SERVER['PHP_SELF']);
-        if ($current_file == 'index.php') {
-        ?>
-            <img id="hero-bg" src="../assets/images/photo-1615719413546-198b25453f85.png" alt="">
-        <?php
-        }
-        ?>
-
         <nav class="navbar navbar-dark navbar-expand-lg container" id="navigation-bar">
             <a href="" class="navbar-brand d-flex flex-row align-content-center justify-content-center">
                 <img src="../assets/images/University_of_Eswatini_logo 1.png" style="aspect-ratio: initial;" height="30px;" alt="">
@@ -28,7 +19,7 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="main-nav">
-                <ul class="navbar-nav me-5 pe-5">
+                <ul class="navbar-nav">
                     <li class="nav-item"><a href="profile.php" class="nav-link text-light">Profile</a></li>
                     <li class="nav-item"><a href="" class="nav-link text-light">About Us</a></li>
                     <li class="nav-item"><a href="" class="nav-link text-light">Logout</a></li>

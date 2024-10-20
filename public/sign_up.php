@@ -2,32 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Document</title>
+    <?php
+    include("../includes/header.php");
+    ?>
 
-</head>
-
-<body class="no-scroll">
-
-    <div class="container-fluid" style="padding: 0;">
-        <div class="row">
-            <div class="col-sm-12 col-lg-6 justify-content-start">
-                <img src="../assets/images/cook_in_kitchen.png" class="preview-image" alt="">
-                <nav class="navbar navbar-dark navbar-expand-lg container" id="navigation-bar">
-                    <a href="" class="navbar-brand d-flex flex-row align-content-center justify-content-center">
-                        <img src="../assets/images/University_of_Eswatini_logo 1.png" style="aspect-ratio: initial;" height="30px;" alt="">
-                        <div class="d-flex flex-column"><span style="color: #FFFF00; font-size: 15px;">University of Eswatini</span><span style="color: #FFFF00; font-size: 15px;">Refectory Ordering System</span></div>
-                    </a>
-                </nav>
-            </div>
-
-
-            <div class="col-sm-12 col-lg-3 justify-content-center">
-                <div>
-
+    <main>
+        <section class="credential-body container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <img src="../assets/images/cook_in_kitchen.png" class="preview-image" alt="">
+                </div>
+                <div class="col-sm-10 col-md-4 form-bg">
                     <form class="credential-form">
                         <span class="fw-bolder h2" style="color: #D20000;">Sign Up</span><br />
                         <div class="registration">
@@ -56,10 +42,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-
-    </div>
-
-</body>
+        </section>
+    </main>
+    </body>
 
 </html>

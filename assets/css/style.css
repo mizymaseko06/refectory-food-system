@@ -20,6 +20,13 @@
     position: absolute;
 }
 
+.preview-image{
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    aspect-ratio: initial;
+}
+
 #navigation-bar {
     z-index: 100;
 }
@@ -27,4 +34,25 @@
 .item-display-image {
     width: 100%;
     height: 150px;
+}
+
+.credential-form{
+    margin-top: 200px;
+    margin-left: 50px;
+}
+
+.no-scroll{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.verification{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .preview-image{
+        width: 100%;
+    }
+    
 }

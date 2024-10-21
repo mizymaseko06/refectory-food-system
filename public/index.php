@@ -11,7 +11,6 @@
         <section id="hero">
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="surround text-center">
-
                     <span class="fw-bolder h1" style="color: #FFFF00;">Craving something to eat from the refectory?</span>
                     <p class="lead text-light">Your favourite meals are just a click away</p>
                 </div>
@@ -70,7 +69,6 @@
                         <p class="lead">We offer a fast and convenient way to get your meals on campus. With a user-friendly interface, you can browse the menu, customize your order, and select a pick-up time that suits you - all from your phone or computer.
 
                             Say goodbye to long lines and waiting times; the system ensures your meal is ready when you are, making campus dining more efficient and enjoyable.</p>
-                            
                     </div>
                 </div>
             </div>
@@ -101,9 +99,6 @@
                 </div>
             </div>
             <p id="copyright-message" class="text-center p-5" style="color:#FFFF00; font-size: 10px;">© 2024 University of Eswatini Refectory Ordering System. All Rights Reserved.</p>
-
-
-
 
         </div>
     </footer>

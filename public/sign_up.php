@@ -23,21 +23,21 @@
                                 <input type="text" class="form-control" id="ID" placeholder="Enter ID">
                             </div>
                             <div class="form-group my-2">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <label for="userPassword">Password</label>
+                                <input type="password" class="form-control" id="userPassword" placeholder="Password">
                                 <span id="passwordInstructions" class="form-text text-muted">Password should have minimum 8 characters</span>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
                         </div>
                         <div class="verification">
                             <span class="fs-6 fw-bold">Verification using OTP</span>
                             <div class="form-group my-3">
-                                <label for="exampleInputEmail1">Student/Staff ID</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter 4-digit OTP here">
+                                <label for="OTP">OTP</label>
+                                <input type="number" class="form-control" id="OTP" placeholder="Enter 4-digit OTP here">
                                 <!-- pop up written "An OTP was sent to 202100111@student.uniswa.sz" will appear -->
                             </div>
 
-                            <button type="submit" class="btn btn-primary mt-1">Verify</button>
+                            <button type="submit" id="verifyBtn" class="btn btn-primary mt-1">Verify</button>
                         </div>
                     </form>
                 </div>

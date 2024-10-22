@@ -16,7 +16,7 @@
                 <div class="col-sm-10 col-md-4 form-bg">
                     <form class="credential-form">
                         <span class="fw-bolder h2" style="color: #D20000;">Sign Up</span><br />
-                        <div class="registration">
+                        <div id="registration">
                             <span class="fs-6 fw-bold">Registration</span>
                             <div class="form-group mt-3">
                                 <label for="ID">Student/Staff ID</label>
@@ -27,9 +27,9 @@
                                 <input type="password" class="form-control" id="userPassword" placeholder="Password">
                                 <span id="passwordInstructions" class="form-text text-muted">Password should have minimum 8 characters</span>
                             </div>
-                            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="proceedBtn" class="btn btn-primary">Proceed</button>
                         </div>
-                        <div class="verification">
+                        <div id="verification">
                             <span class="fs-6 fw-bold">Verification using OTP</span>
                             <div class="form-group my-3">
                                 <label for="OTP">OTP</label>
@@ -44,6 +44,7 @@
             </div>
         </section>
     </main>
+    <script src="../assets/js/script.js"></script>
     </body>
 
 </html>

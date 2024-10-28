@@ -20,26 +20,33 @@
         <section id="today-menu">
             <div class="container-sm">
                 <span class="fw-bold h1" style="color: #D20000;">Today's menu</span>
-                <ul class="nav nav-pills justify-content-center mt-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Recommended for you</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">All</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Breakfast</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lunch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sides</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Drinks</a>
-                    </li>
-                </ul>
+                <div class="row justify-content-center">
+                    <div class="col-11 px-1">
+                        <div class="overflow-auto justify-content-center">
+                            <ul class="nav nav-pills mt-5 d-flex flex-nowrap">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Recommended for you</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">All</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Breakfast</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Lunch</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sides</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Drinks</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="row card-deck justify-content-center">
 
                     <?php for ($i = 0; $i < 16; $i++) {

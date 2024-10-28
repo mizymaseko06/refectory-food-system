@@ -17,7 +17,22 @@
                     <form class="credential-form">
                         <span class="fw-bolder h2" style="color: #D20000;">Sign Up</span><br />
                         <div id="registration">
-                            <span class="fs-6 fw-bold">Registration</span>
+                            <span class="fs-6 fw-bold">Registration</span><br>
+                            <p style="margin: 10px 0 0 0;">User type:</p>
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Student
+                                    </label>
+                                </div>
+                                <div class="form-check" style="margin-left: 10px;">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Staff
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group mt-3">
                                 <label for="ID">Student/Staff ID</label>
                                 <input type="text" class="form-control" id="ID" placeholder="Enter ID">

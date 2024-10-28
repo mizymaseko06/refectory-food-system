@@ -13,6 +13,11 @@
                 <div class="surround text-center">
                     <span class="fw-bolder h1" style="color: #FFFF00;">Craving something to eat from the refectory?</span>
                     <p class="lead text-light">Your favourite meals are just a click away</p>
+                    <form action="" class="justify-content">
+                        <label for="search" class="form-label"><input type="search" class="form-control" id="search" placeholder="Search here"></label>
+                        <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                        
+                    </form>
                 </div>
             </div>
         </section>

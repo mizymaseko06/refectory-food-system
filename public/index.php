@@ -1,5 +1,5 @@
 <?php
-include "../includes/db_connect.php";
+include "../config/db_connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

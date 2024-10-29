@@ -21,28 +21,28 @@
                             <p style="margin: 10px 0 0 0;">User type:</p>
                             <div style="display: flex; flex-direction: row;">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="userRole" value="student" checked>
+                                    <label class="form-check-label" for="studentRole">
                                         Student
                                     </label>
                                 </div>
                                 <div class="form-check" style="margin-left: 10px;">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
+                                    <input class="form-check-input" type="radio" name="userRole" value="staff">
+                                    <label class="form-check-label" for="staffRole">
                                         Staff
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="ID">Student/Staff ID</label>
-                                <input type="text" class="form-control" id="ID" placeholder="Enter ID">
+                                <input type="text" class="form-control" name="userID" placeholder="Enter ID">
                             </div>
                             <div class="form-group my-2">
                                 <label for="userPassword">Password</label>
-                                <input type="password" class="form-control" id="userPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="userPassword" placeholder="Password">
                                 <span id="passwordInstructions" class="form-text text-muted">Password should have minimum 8 characters</span>
                             </div>
-                            <button type="submit" id="proceedBtn" class="btn btn-primary">Proceed</button>
+                            <button type="submit" id="proceedBtn" name="submit" class="btn btn-primary">Proceed</button>
                         </div>
                         <div id="verification">
                             <span class="fs-6 fw-bold">Verification using OTP</span>

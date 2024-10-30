@@ -34,19 +34,16 @@ include "../includes/menu.php";
                         <div class="overflow-auto justify-content-center">
                             <ul class="nav nav-pills mt-5 d-flex flex-nowrap">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Recommended for you</a>
+                                    <a class="nav-link" aria-current="page" href="#">Recommended for you</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">All</a>
+                                    <a class="nav-link active" href="#">All</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Breakfast</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Lunch</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Sides</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Drinks</a>
@@ -61,19 +58,36 @@ include "../includes/menu.php";
                     <?php
                     foreach ($menu_items as $menu_item) {
                     ?>
-                        <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
-                            <img src="<?php echo $menu_item['image']; ?>" class="card-img-top item-display-image" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold" style="color: #D20000;"><?php echo $menu_item['name']; ?></h5>
-                                <h6 class="fst-italic">E<?php echo $menu_item['price'] ?></h6>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
+
+                        <div class="all">
+                            <?php
+                            include "../includes/menu_item.php";
+                            ?>
                         </div>
-
+                        <div class="breakfast">
+                            <?php
+                            if ($menu_item['categories'] == 'Breakfast') {
+                                include "../includes/menu_item.php";
+                            }
+                            ?>
+                        </div>
+                        <div class="lunch">
+                            <?php
+                            if ($menu_item['categories'] == 'Lunch') {
+                                include "../includes/menu_item.php";
+                            }
+                            ?>
+                        </div>
+                        <div class="beverages">
+                            <?php
+                            if ($menu_item['categories'] == 'Beverages') {
+                                include "../includes/menu_item.php";
+                            }
+                            ?>
+                        </div>
                     <?php
-                    }
 
+                    }
                     ?>
                 </div>
             </div>

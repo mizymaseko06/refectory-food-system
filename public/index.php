@@ -1,5 +1,6 @@
 <?php
 include "../config/db_connect.php";
+include "../includes/menu.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@ include "../config/db_connect.php";
                     <form action="" class="justify-content">
                         <label for="search" class="form-label"><input type="search" class="form-control" id="search" placeholder="Search here"></label>
                         <button class="btn btn-primary"><i class="bi bi-search"></i></button>
-                        
+
                     </form>
                 </div>
             </div>
@@ -57,18 +58,22 @@ include "../config/db_connect.php";
                 </div>
                 <div class="row card-deck justify-content-center">
 
-                    <?php for ($i = 0; $i < 16; $i++) {
+                    <?php
+                    foreach ($menu_items as $menu_item) {
                     ?>
                         <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
-                            <img src="../assets/images/photo-1615719413546-198b25453f85.png" class="card-img-top item-display-image" alt="...">
+                            <img src="<?php echo $menu_item['image']; ?>" class="card-img-top item-display-image" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title fw-bold" style="color: #D20000;">Chicken Meal</h5>
+                                <h5 class="card-title fw-bold" style="color: #D20000;"><?php echo $menu_item['name']; ?></h5>
+                                <h6 class="fst-italic">E<?php echo $menu_item['price'] ?></h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary">Add to cart</a>
                             </div>
                         </div>
+
                     <?php
                     }
+
                     ?>
                 </div>
             </div>

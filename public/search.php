@@ -20,7 +20,7 @@ if (isset($_GET['search'])) {
     include '../includes/header.php';
     ?>
 
-    <main>
+    <main class="main-top-margin">
         <div class="container-sm">
         <span class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue) ?>" </span>
             <div class="row card-deck justify-content-center">

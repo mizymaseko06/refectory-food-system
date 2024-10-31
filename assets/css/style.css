@@ -72,6 +72,15 @@
     object-fit: cover;
 }
 
+.breakfast{
+    display: none;
+}
+.lunch{
+    display: none;
+}
+.drinks{
+    display: none;
+}
 
 @media (max-width: 768px) {
     .preview-image {

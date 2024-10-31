@@ -53,40 +53,38 @@ include "../includes/menu.php";
 
                     </div>
                 </div>
-                <div class="row card-deck justify-content-center">
 
+                <div class="row card-deck justify-content-center all">
                     <?php
                     foreach ($menu_items as $menu_item) {
+                        include "../includes/menu_item.php";
+                    }
                     ?>
-
-                        <div class="all">
-                            <?php
-                            include "../includes/menu_item.php";
-                            ?>
-                        </div>
-                        <div class="breakfast">
-                            <?php
-                            if ($menu_item['categories'] == 'Breakfast') {
-                                include "../includes/menu_item.php";
-                            }
-                            ?>
-                        </div>
-                        <div class="lunch">
-                            <?php
-                            if ($menu_item['categories'] == 'Lunch') {
-                                include "../includes/menu_item.php";
-                            }
-                            ?>
-                        </div>
-                        <div class="beverages">
-                            <?php
-                            if ($menu_item['categories'] == 'Beverages') {
-                                include "../includes/menu_item.php";
-                            }
-                            ?>
-                        </div>
+                </div>
+                <div class="row card-deck justify-content-center breakfast">
                     <?php
-
+                    foreach ($menu_items as $menu_item) {
+                        if ($menu_item['categories'] == 'Breakfast') {
+                            include "../includes/menu_item.php";
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="row card-deck justify-content-center lunch">
+                    <?php
+                    foreach ($menu_items as $menu_item) {
+                        if ($menu_item['categories'] == 'Lunch') {
+                            include "../includes/menu_item.php";
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="row card-deck justify-content-center beverages">
+                    <?php
+                    foreach ($menu_items as $menu_item) {
+                        if ($menu_item['categories'] == 'Beverages') {
+                            include "../includes/menu_item.php";
+                        }
                     }
                     ?>
                 </div>

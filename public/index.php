@@ -33,61 +33,68 @@ include "../includes/menu.php";
                     <div class="col-11 px-1">
                         <div class="overflow-auto justify-content-center">
                             <ul class="nav nav-pills mt-5 d-flex flex-nowrap">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Recommended for you</a>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-items">All</button>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">All</a>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="breakfast-tab" data-bs-toggle="pill" data-bs-target="#breakfast-items">Breakfast</button>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Breakfast</a>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="lunch-tab" data-bs-toggle="pill" data-bs-target="#lunch-items">Lunch</button>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Lunch</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Drinks</a>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="beverages-tab" data-bs-toggle="pill" data-bs-target="#beverages-items">Beverages</button>
                                 </li>
                             </ul>
                         </div>
 
                     </div>
                 </div>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="row card-deck justify-content-center">
+                            <?php
+                            foreach ($menu_items as $menu_item) {
+                                include "../includes/menu_item.php";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="breakfast-items" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="row card-deck justify-content-center">
+                            <?php
+                            foreach ($menu_items as $menu_item) {
+                                if ($menu_item['categories'] == 'Breakfast') {
+                                    include "../includes/menu_item.php";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="lunch-items" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="row card-deck justify-content-center">
+                            <?php
+                            foreach ($menu_items as $menu_item) {
+                                if ($menu_item['categories'] == 'Lunch') {
+                                    include "../includes/menu_item.php";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="beverages-items" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="row card-deck justify-content-center">
+                            <?php
+                            foreach ($menu_items as $menu_item) {
+                                if ($menu_item['categories'] == 'Beverages') {
+                                    include "../includes/menu_item.php";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="row card-deck justify-content-center all">
-                    <?php
-                    foreach ($menu_items as $menu_item) {
-                        include "../includes/menu_item.php";
-                    }
-                    ?>
-                </div>
-                <div class="row card-deck justify-content-center breakfast">
-                    <?php
-                    foreach ($menu_items as $menu_item) {
-                        if ($menu_item['categories'] == 'Breakfast') {
-                            include "../includes/menu_item.php";
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="row card-deck justify-content-center lunch">
-                    <?php
-                    foreach ($menu_items as $menu_item) {
-                        if ($menu_item['categories'] == 'Lunch') {
-                            include "../includes/menu_item.php";
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="row card-deck justify-content-center beverages">
-                    <?php
-                    foreach ($menu_items as $menu_item) {
-                        if ($menu_item['categories'] == 'Beverages') {
-                            include "../includes/menu_item.php";
-                        }
-                    }
-                    ?>
-                </div>
             </div>
         </section>
         <section id="about-us" class="m-5">

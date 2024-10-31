@@ -11,16 +11,15 @@ include "../includes/menu.php";
     include("../includes/header.php");
     ?>
     <main>
-
         <section id="hero">
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="surround text-center">
                     <span class="fw-bolder h1" style="color: #FFFF00;">Craving something to eat from the refectory?</span>
                     <p class="lead text-light">Your favourite meals are just a click away</p>
-                    <form action="" class="justify-content">
-                        <label for="search" class="form-label"><input type="search" class="form-control" id="search" placeholder="Search here"></label>
-                        <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                    <form action="search.php" method="GET" class="justify-content">
+                        <label for="search" class="form-label"><input name="search" type="text" class="form-control" id="search" placeholder="Search here"></label>
 
+                        <button class="btn btn-primary" type="submit">Search <i class="bi bi-search"></i></button>
                     </form>
                 </div>
             </div>

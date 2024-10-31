@@ -7,14 +7,17 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-lg container" id="navigation-bar">
+        <?php $current_file = basename($_SERVER['PHP_SELF']); ?>
+        <nav class="navbar navbar-dark navbar-expand-lg container-fluid" id="navigation-bar" <?php if ($current_file != "index.php") { ?>
+            style="background-color: #001C81;" <?php } ?>>
+
             <a href="index.php" class="navbar-brand d-flex flex-row align-content-center justify-content-center">
                 <img src="../assets/images/University_of_Eswatini_logo 1.png" style="aspect-ratio: initial;" height="30px;" alt="">
                 <div class="d-flex flex-column"><span style="color: #FFFF00; font-size: 15px;">University of Eswatini</span><span style="color: #FFFF00; font-size: 15px;">Refectory Ordering System</span></div>
             </a>
+
             <?php
-            $current_file = basename($_SERVER['PHP_SELF']);
-            if ($current_file == "index.php") {
+            if ($current_file != "sign_up.php") {
             ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
                     <span class="navbar-toggler-icon"></span>

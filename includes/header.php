@@ -8,7 +8,7 @@
 <body>
     <header>
         <?php $current_file = basename($_SERVER['PHP_SELF']); ?>
-        <nav class="navbar navbar-dark navbar-expand-lg container-fluid" id="navigation-bar" <?php if ($current_file != "index.php") { ?>
+        <nav class="navbar navbar-dark navbar-expand-lg container-fluid" id="navigation-bar" <?php if ($current_file != "index.php" && $current_file != "login.php" && $current_file != "sign_up.php") { ?>
             style="background-color: #001C81;" <?php } ?>>
 
             <a href="index.php" class="navbar-brand d-flex flex-row align-content-center justify-content-center">
@@ -17,7 +17,7 @@
             </a>
 
             <?php
-            if ($current_file != "sign_up.php") {
+            if ($current_file != "sign_up.php" && $current_file != "login.php") {
             ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
                     <span class="navbar-toggler-icon"></span>

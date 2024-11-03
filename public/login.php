@@ -1,3 +1,7 @@
+<?php
+include "../config/db_connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +18,7 @@
                     <img src="../assets/images/cook_in_kitchen.png" class="preview-image" alt="">
                 </div>
                 <div class="col-sm-10 col-md-4 form-bg">
-                    <form class="credential-form">
+                    <form action="login.php" class="credential-form">
                         <span class="fw-bolder h2" style="color: #D20000;">Log In</span><br />
                         <div id="sign-up">
                             <span class="fs-6 fw-bold">Fill in your credentials</span><br>

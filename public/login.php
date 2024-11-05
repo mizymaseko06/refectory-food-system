@@ -1,5 +1,47 @@
 <?php
+session_start();
 include "../config/db_connect.php";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $schoolID = mysqli_real_escape_string($conn, $_POST['userID']);
+    $password = $_POST['userPassword'];
+
+    $query = "SELECT school_ID, password from users where school_ID=?";
+    // initialize prepared statement
+
+    // prepare the prepared statement
+    if ($stmt = mysqli_prepare($conn, $query)) {
+        // binding parameters to placeholder
+        mysqli_stmt_bind_param($stmt, "s", $schoolID);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+
+        //checks if user with that ID exists
+        if (mysqli_stmt_num_rows($stmt) == 1) {
+            mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash);
+            mysqli_Stmt_fetch($stmt);
+
+            // verify password
+
+            if (password_verify($password, $password_hash)) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['id'] = $schoolID_db;
+                header("Location: index.php");
+                exit;
+            } else {
+?>
+                <script>
+                    alert("Invalid password")
+                </script>
+<?php
+            }
+        } else {
+            echo "Invalid username";
+        }
+        mysqli_stmt_close($stmt);
+    }
+
+    mysqli_close($conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +60,7 @@ include "../config/db_connect.php";
                     <img src="../assets/images/cook_in_kitchen.png" class="preview-image" alt="">
                 </div>
                 <div class="col-sm-10 col-md-4 form-bg">
-                    <form action="login.php" class="credential-form">
+                    <form action="" method="POST" class="credential-form">
                         <span class="fw-bolder h2" style="color: #D20000;">Log In</span><br />
                         <div id="sign-up">
                             <span class="fs-6 fw-bold">Fill in your credentials</span><br>

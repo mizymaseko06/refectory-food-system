@@ -22,7 +22,7 @@ if (isset($_GET['search'])) {
 
     <main class="main-top-margin">
         <div class="container-sm">
-        <span class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue) ?>" </span>
+            <span class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue) ?>" </span>
             <div class="row card-deck justify-content-center">
                 <?php
                 if (isset($result) && mysqli_num_rows($result) > 0) {
@@ -45,3 +45,12 @@ if (isset($_GET['search'])) {
             </div>
         </div>
     </main>
+
+    <?php
+    include "../includes/footer.php";
+    ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+
+</html>

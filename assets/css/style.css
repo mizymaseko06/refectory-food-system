@@ -82,6 +82,39 @@
     margin-top: 100px;
 }
 
+.floating-cart{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: yellow;
+}
+
+.cart-details{
+    font-size: 12px;
+}
+
+.cart-icon{
+    position: relative;
+}
+
+.item-count{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 768px) {
     .preview-image {
         position: absolute;

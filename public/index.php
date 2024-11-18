@@ -24,7 +24,16 @@ include "../includes/menu.php";
                 </div>
             </div>
         </section>
-
+        <div class="floating-cart d-flex align-items-center">
+            <div class="cart-icon me-3">
+                <i class="bi bi-cart" style="font-size: 25px;"></i>
+                <div class="item-count">1</div>
+            </div>
+            <div class="cart-details">
+                <div>Cost: 500</div>
+                <div>Balance: 2333</div>
+            </div>
+        </div>
         <section id="today-menu">
             <div class="container-sm">
                 <span class="fw-bold h1" style="color: #D20000;">Today's menu</span>

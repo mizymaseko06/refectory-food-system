@@ -57,12 +57,28 @@ include "../includes/menu.php";
         <div class="container-fluid">
           <button class="btn btn-primary" id="menu-toggle">☰ Toggle Menu</button>
 
-          <h1 class="mt-4">Welcome to the Dashboard</h1>
+          <h1 class="mt-4">University of Eswatini Refectory Dashboard</h1>
 
           <!-- Content Sections -->
-          <div id="add-items" class="content-section">
+          <div id="add-items" class="content-section d-flex" style="display: block;">
             <h3>Add Items</h3>
-            <!-- <p>Content for adding items goes here.</p> -->
+
+              <form action="add_item.php" method="POST" enctype="multipart/form-data" class="w-75 d-flex flex-column mt-5">
+                <div class="mb-3">
+                  <label for="itemName" class="form-label">Item Name</label>
+                  <input type="text" class="form-control" id="itemName" name="itemName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="itemPrice" class="form-label">Price</label>
+                  <input type="number" step="0.01" class="form-control" id="itemPrice" name="itemPrice" required>
+                </div>
+                <div class="mb-3">
+                  <label for="itemImage" class="form-label">Upload Image</label>
+                  <input type="file" class="form-control" id="itemImage" name="itemImage" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Item</button>
+              </form>
+            </div>
 
             <table class="table table-striped table-bordered table-responsive-sm">
               <thead>

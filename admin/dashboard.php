@@ -131,7 +131,42 @@ include "../includes/menu.php";
 
           <div id="order-history" class="content-section" style="display:none;">
             <h3>Order History</h3>
-            <p>Content for viewing order history goes here.</p>
+            <table class="table table-striped table-bordered table-responsive-sm mt-5">
+              <thead>
+                <tr>
+                  <th>OrderID</th>
+                  <th>User ID</th>
+                  <th>Order items</th>
+                  <th>Time of order</th>
+                  <th>Total</th>
+                  <th>Status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($menu_items as $menu_item) {
+                ?>
+                  <!-- Table Row 1 -->
+                  <tr>
+                    <td class="d-flex justify-content-center align-items-center"><img src="<?php echo $menu_item['image']; ?>" alt="Menu Item" class="img-fluid" style="width: 200px;"></td>
+                    <td><?php echo $menu_item['name']; ?></td>
+                    <td><?php echo $menu_item['price'] ?></td>
+                    <td>
+                      <button class="btn btn-warning btn-sm" onclick="editItem(1)">
+                        <i class="bi bi-pencil"></i> Edit
+                      </button>
+                      <button class="btn btn-danger btn-sm" onclick="deleteItem(1)">
+                        <i class="bi bi-trash"></i> Delete
+                      </button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                <?php
+                } ?>
+
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

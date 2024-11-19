@@ -141,7 +141,11 @@
     flex-grow: 1;
 }
 
-
+@media (min-width: 769px){
+    #menu-toggle{
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
     .preview-image {

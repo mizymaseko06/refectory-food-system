@@ -60,27 +60,27 @@ include "../includes/menu.php";
           <h1 class="mt-4">University of Eswatini Refectory Dashboard</h1>
 
           <!-- Content Sections -->
-          <div id="add-items" class="content-section d-flex" style="display: block;">
+          <div id="add-items" class="content-section" style="display: block;">
             <h3>Add Items</h3>
 
-              <form action="add_item.php" method="POST" enctype="multipart/form-data" class="w-75 d-flex flex-column mt-5">
-                <div class="mb-3">
-                  <label for="itemName" class="form-label">Item Name</label>
-                  <input type="text" class="form-control" id="itemName" name="itemName" required>
-                </div>
-                <div class="mb-3">
-                  <label for="itemPrice" class="form-label">Price</label>
-                  <input type="number" step="0.01" class="form-control" id="itemPrice" name="itemPrice" required>
-                </div>
-                <div class="mb-3">
-                  <label for="itemImage" class="form-label">Upload Image</label>
-                  <input type="file" class="form-control" id="itemImage" name="itemImage" accept="image/*" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Add Item</button>
-              </form>
-            </div>
+            <form action="add_item.php" method="POST" enctype="multipart/form-data" class="w-75 d-flex flex-column mt-5">
+              <div class="mb-3">
+                <label for="itemName" class="form-label">Item Name</label>
+                <input type="text" class="form-control" id="itemName" name="itemName" required>
+              </div>
+              <div class="mb-3">
+                <label for="itemPrice" class="form-label">Price</label>
+                <input type="number" step="0.01" class="form-control" id="itemPrice" name="itemPrice" required>
+              </div>
+              <div class="mb-3">
+                <label for="itemImage" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="itemImage" name="itemImage" accept="image/*" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
 
-            <table class="table table-striped table-bordered table-responsive-sm">
+
+            <table class="table table-striped table-bordered table-responsive-sm mt-5">
               <thead>
                 <tr>
                   <th>Image</th>
@@ -116,7 +116,17 @@ include "../includes/menu.php";
 
           <div id="top-up" class="content-section" style="display:none;">
             <h3>Top Up User Balance</h3>
-            <p>Content for topping up the user balance goes here.</p>
+            <form action="top_up_balance.php" class="w-75" method="POST">
+              <div class="mb-3">
+                <label for="studentId" class="form-label">ID</label>
+                <input type="number" class="form-control" id="studentId" name="studentId" required>
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="form-label">Amount to Top Up</label>
+                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Top Up Balance</button>
+            </form>
           </div>
 
           <div id="order-history" class="content-section" style="display:none;">

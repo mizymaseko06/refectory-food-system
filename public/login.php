@@ -1,6 +1,8 @@
 <?php
 session_start();
-include "../config/db_connect.php";
+include_once "../config/db_connect.php";
+include_once "../config/db_create.php";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $schoolID = mysqli_real_escape_string($conn, $_POST['userID']);
     $password = $_POST['userPassword'];

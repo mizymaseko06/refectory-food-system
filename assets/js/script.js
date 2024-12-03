@@ -13,8 +13,8 @@ document.getElementById('top-up-link').addEventListener('click', function () {
     showContent('top-up');
 });
 
-document.getElementById('order-history-link').addEventListener('click', function () {
-    showContent('order-history');
+document.getElementById('order-list-link').addEventListener('click', function () {
+    showContent('order-list');
 });
 
 // Function to show the relevant content section

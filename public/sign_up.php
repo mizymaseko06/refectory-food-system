@@ -8,11 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($role == 'student') {
         $school_email = $schoolID . '@student.uniswa.sz';
+        $query = "INSERT INTO users (school_ID, email, password) VALUES ('$schoolID','$school_email', '$password')";
     } elseif ($role == 'staff') {
         $school_email = $schoolID . '@uniswa.sz';
+        $query = "INSERT INTO admin (school_ID, email, password) VALUES ('$schoolID','$school_email', '$password')";
     }
 
-    $query = "INSERT INTO users (school_ID, email, password) VALUES ('$schoolID','$school_email', '$password')";
 
     if (mysqli_query($conn, $query)) {
         echo "Registration successful!";

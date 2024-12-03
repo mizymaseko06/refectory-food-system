@@ -44,7 +44,7 @@ include "../includes/menu.php";
               <a class="nav-link text-white" href="#" id="top-up-link">Top Up User Balance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#" id="order-history-link">Order History</a>
+              <a class="nav-link text-white" href="#" id="order-list-link">Order List</a>
             </li>
           </ul>
         </nav>
@@ -129,8 +129,8 @@ include "../includes/menu.php";
             </form>
           </div>
 
-          <div id="order-history" class="content-section" style="display:none;">
-            <h3>Order History</h3>
+          <div id="order-list" class="content-section" style="display:none;">
+            <h3>Order List</h3>
             <table class="table table-striped table-bordered table-responsive-sm mt-5">
               <thead>
                 <tr>

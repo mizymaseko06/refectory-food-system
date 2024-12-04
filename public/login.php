@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 
 <head>
-    <title>Document</title>
+    <title>Login</title>
     <?php
     include("../includes/header.php");
     ?>

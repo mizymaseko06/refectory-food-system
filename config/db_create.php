@@ -26,6 +26,7 @@ $users_table = "CREATE TABLE IF NOT EXISTS Users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    balance DECIMAL(10, 2) DEFAULT 0.00,
     role ENUM('student', 'staff', 'admin') NOT NULL
 )";
 

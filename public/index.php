@@ -72,7 +72,7 @@ include "../includes/menu.php";
                         <div class="row card-deck justify-content-center">
                             <?php
                             foreach ($menu_items as $menu_item) {
-                                if ($menu_item['categories'] == 'Breakfast') {
+                                if ($menu_item['category'] == 'Breakfast') {
                                     include "../includes/menu_item.php";
                                 }
                             }
@@ -83,7 +83,7 @@ include "../includes/menu.php";
                         <div class="row card-deck justify-content-center">
                             <?php
                             foreach ($menu_items as $menu_item) {
-                                if ($menu_item['categories'] == 'Lunch') {
+                                if ($menu_item['category'] == 'Lunch') {
                                     include "../includes/menu_item.php";
                                 }
                             }
@@ -94,7 +94,7 @@ include "../includes/menu.php";
                         <div class="row card-deck justify-content-center">
                             <?php
                             foreach ($menu_items as $menu_item) {
-                                if ($menu_item['categories'] == 'Beverages') {
+                                if ($menu_item['category'] == 'Beverages') {
                                     include "../includes/menu_item.php";
                                 }
                             }

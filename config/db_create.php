@@ -22,6 +22,7 @@ if (mysqli_query($conn, $db_check_query)) {
 // SQL to create the Users table
 $users_table = "CREATE TABLE IF NOT EXISTS Users (
     userID INT AUTO_INCREMENT PRIMARY KEY,
+    schoolID VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -61,58 +62,55 @@ $order_items_table = "CREATE TABLE IF NOT EXISTS OrderItems (
 
 // Execute the SQL queries to create the tables first
 if (mysqli_query($conn, $users_table)) {
-    echo "Users table created successfully.<br>";
+    // echo "Users table created successfully.<br>";
 } else {
     echo "Error creating Users table: " . mysqli_error($conn) . "<br>";
 }
 
 if (mysqli_query($conn, $items_table)) {
-    echo "Items table created successfully.<br>";
+    // echo "Items table created successfully.<br>";
 } else {
     echo "Error creating Items table: " . mysqli_error($conn) . "<br>";
 }
 
 if (mysqli_query($conn, $orders_table)) {
-    echo "Orders table created successfully.<br>";
+    // echo "Orders table created successfully.<br>";
 } else {
     echo "Error creating Orders table: " . mysqli_error($conn) . "<br>";
 }
 
 if (mysqli_query($conn, $order_items_table)) {
-    echo "OrderItems table created successfully.<br>";
+    // echo "OrderItems table created successfully.<br>";
 } else {
     echo "Error creating OrderItems table: " . mysqli_error($conn) . "<br>";
 }
 
 // Now insert the menu items after the tables have been created
 $insert_sql = "
-INSERT IGNORE INTO `Items` (`itemName`, `itemPrice`, `category`, `isAvailable`, `image`) VALUES
-('Incwancwa', 6.00, 'Breakfast', 1, '../assets/images/incwancwa.jpg'),
-('Oats', 10.00, 'Breakfast', 1, '../assets/images/oats.jpg'),
-('Slice of bread', 1.50, 'Breakfast', 1, '../assets/images/slice.jpg'),
-('Egg', 2.50, 'Breakfast', 1, '../assets/images/egg.jpg'),
-('Vienna', 6.00, 'Breakfast', 1, '../assets/images/vienna.jpg'),
-('Russian', 10.00, 'Breakfast', 1, '../assets/images/russian.png'),
-('Tea', 6.00, 'Beverages', 1, '../assets/images/tea.jpg'),
-('Coffee', 7.00, 'Beverages', 1, '../assets/images/coffee.jpg'),
-('Orange Juice', 8.00, 'Beverages', 1, '../assets/images/orange_juice.jpg'),
-('Chicken Stew Meal', 30.00, 'Lunch', 1, '../assets/images/chicken_stew.jpg'),
-('Boiled Chicken Meal', 30.00, 'Lunch', 1, '../assets/images/boiled_chicken.jpg'),
-('Fried Chicken Meal', 30.00, 'Lunch', 1, '../assets/images/fried_chicken.jpg'),
-('Beef Stew Meal', 30.00, 'Lunch', 1, '../assets/images/beef_stew.jpg'),
-('Boiled Beef Meal', 30.00, 'Lunch', 1, '../assets/images/boiled_beef.webp'),
-('Hake Meal', 30.00, 'Lunch', 1, '../assets/images/hake.jpg'),
-('Beans Meal', 30.00, 'Lunch', 1, '../assets/images/beans.png'),
-('Coca Cola', 15.00, 'Beverages', 1, '../assets/images/CocaCola.jpg'),
-('Fanta', 15.00, 'Beverages', 1, '../assets/images/Fanta.jpg'),
-('Sprite', 15.00, 'Beverages', 1, '../assets/images/Sprite.jpg');
+INSERT IGNORE INTO `Items` (`itemID`,`itemName`, `itemPrice`, `category`, `isAvailable`, `image`) VALUES
+(1, 'Incwancwa', 6.00, 'Breakfast', 1, '../assets/images/incwancwa.jpg'),
+(2, 'Oats', 10.00, 'Breakfast', 1, '../assets/images/oats.jpg'),
+(3, 'Slice of bread', 1.50, 'Breakfast', 1, '../assets/images/slice.jpg'),
+(4, 'Egg', 2.50, 'Breakfast', 1, '../assets/images/egg.jpg'),
+(5, 'Vienna', 6.00, 'Breakfast', 1, '../assets/images/vienna.jpg'),
+(6, 'Russian', 10.00, 'Breakfast', 1, '../assets/images/russian.png'),
+(7, 'Tea', 6.00, 'Beverages', 1, '../assets/images/tea.jpg'),
+(8, 'Coffee', 7.00, 'Beverages', 1, '../assets/images/coffee.jpg'),
+(9, 'Orange Juice', 8.00, 'Beverages', 1, '../assets/images/orange_juice.jpg'),
+(10, 'Chicken Stew Meal', 30.00, 'Lunch', 1, '../assets/images/chicken_stew.jpg'),
+(11, 'Boiled Chicken Meal', 30.00, 'Lunch', 1, '../assets/images/boiled_chicken.jpg'),
+(12, 'Fried Chicken Meal', 30.00, 'Lunch', 1, '../assets/images/fried_chicken.jpg'),
+(13, 'Beef Stew Meal', 30.00, 'Lunch', 1, '../assets/images/beef_stew.jpg'),
+(14, 'Boiled Beef Meal', 30.00, 'Lunch', 1, '../assets/images/boiled_beef.webp'),
+(15, 'Hake Meal', 30.00, 'Lunch', 1, '../assets/images/hake.jpg'),
+(16, 'Beans Meal', 30.00, 'Lunch', 1, '../assets/images/beans.png'),
+(17, 'Coca Cola', 15.00, 'Beverages', 1, '../assets/images/CocaCola.jpg'),
+(18, 'Fanta', 15.00, 'Beverages', 1, '../assets/images/Fanta.jpg'),
+(19, 'Sprite', 15.00, 'Beverages', 1, '../assets/images/Sprite.jpg');
 ";
 
 if (mysqli_query($conn, $insert_sql)) {
-    echo "Menu items inserted successfully.<br>";
+    // echo "Menu items inserted successfully.<br>";
 } else {
     echo "Error inserting menu items: " . mysqli_error($conn) . "<br>";
 }
-
-// Close the connection
-mysqli_close($conn);

@@ -4,25 +4,18 @@ include_once "../config/db_connect.php";
 include_once "../config/db_create.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $schoolID = mysqli_real_escape_string($conn, $_POST['userID']);
+    $schoolID = mysqli_real_escape_string($conn, $_POST['schoolID']);
     $password = $_POST['userPassword'];
 
-    $query = "SELECT school_ID, password from users where school_ID=?";
-    // initialize prepared statement
-
-    // prepare the prepared statement
+    $query = "SELECT schoolID, password FROM users WHERE schoolID=?";
     if ($stmt = mysqli_prepare($conn, $query)) {
-        // binding parameters to placeholder
         mysqli_stmt_bind_param($stmt, "s", $schoolID);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
-        //checks if user with that ID exists
         if (mysqli_stmt_num_rows($stmt) == 1) {
             mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash);
-            mysqli_Stmt_fetch($stmt);
-
-            // verify password
+            mysqli_stmt_fetch($stmt);
 
             if (password_verify($password, $password_hash)) {
                 $_SESSION['loggedin'] = true;
@@ -30,21 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header("Location: index.php");
                 exit;
             } else {
-?>
-                <script>
-                    alert("Invalid password")
-                </script>
-<?php
+                echo "<script>alert('Invalid password');</script>";
             }
         } else {
-            echo "Invalid username";
+            echo "<script>alert('Invalid username');</script>";
         }
         mysqli_stmt_close($stmt);
+    } else {
+        echo "Error preparing statement: " . mysqli_error($conn);
     }
-
     mysqli_close($conn);
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <span class="fs-6 fw-bold">Fill in your credentials</span><br>
                             <div class="form-group mt-3">
                                 <label for="ID">Student/Staff ID</label>
-                                <input type="text" class="form-control" name="userID" placeholder="Enter ID">
+                                <input type="text" class="form-control" name="schoolID" placeholder="Enter ID">
                             </div>
                             <div class="form-group my-2">
                                 <label for="userPassword">Password</label>
@@ -77,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                             <button type="submit" id="proceedBtn" name="submit" class="btn btn-primary">Sign In</button>
                         </div>
+                        <p class="small">If you don't have an account, <a href="sign_up.php">sign up here</a>.</p>
                 </div>
                 </form>
             </div>

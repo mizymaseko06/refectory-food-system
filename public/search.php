@@ -5,7 +5,7 @@ if (isset($_GET['search'])) {
     //deals with escape characters
     $searchValue = mysqli_real_escape_string($conn, $_GET['search']);
 
-    $query = "SELECT * FROM menu WHERE name LIKE '%$searchValue%'";
+    $query = "SELECT * FROM items WHERE itemName LIKE '%$searchValue%'";
 
     $result = mysqli_query($conn, $query);
 }
@@ -31,8 +31,8 @@ if (isset($_GET['search'])) {
                         <div class="card col-sm-6 col-lg-4 mt-5 ms-1 me-1" style="width: 18rem;">
                             <img src="<?php echo htmlspecialchars($row['image']); ?>" class="card-img-top item-display-image" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title fw-bold" style="color: #D20000;"><?php echo htmlspecialchars($row['name']); ?></h5>
-                                <h6 class="fst-italic">E<?php echo htmlspecialchars($row['price']) ?></h6>
+                                <h5 class="card-title fw-bold" style="color: #D20000;"><?php echo htmlspecialchars($row['itemName']); ?></h5>
+                                <h6 class="fst-italic">E<?php echo htmlspecialchars($row['itemPrice']) ?></h6>
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                                 <a href="#" class="btn btn-primary">Add to cart</a>
                             </div>

@@ -6,15 +6,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = password_hash($_POST['userPassword'], PASSWORD_BCRYPT);
     $role = mysqli_real_escape_string($conn, $_POST['userRole']);
 
+    // Generate the email based on the role and ID
     if ($role == 'student') {
         $school_email = $schoolID . '@student.uniswa.sz';
-        $query = "INSERT INTO users (school_ID, email, password) VALUES ('$schoolID','$school_email', '$password')";
     } elseif ($role == 'staff') {
         $school_email = $schoolID . '@uniswa.sz';
-        $query = "INSERT INTO admin (school_ID, email, password) VALUES ('$schoolID','$school_email', '$password')";
+    } else {
+        $school_email = $schoolID . '@gmail.com'; // Generic email for admin
     }
 
+    // Insert into the Users table
+    $query = "INSERT INTO Users (schoolID, email, password, role) VALUES ('$schoolID', '$school_email', '$password', '$role')";
 
+    // Execute the query
     if (mysqli_query($conn, $query)) {
         echo "Registration successful!";
         header("Location: login.php");
@@ -25,18 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     mysqli_close($conn);
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Document</title>
-    <?php
-    include("../includes/header.php");
-    ?>
+    <title>Sign Up</title>
+    <?php include("../includes/header.php"); ?>
+</head>
 
+<body>
     <main>
         <section class="credential-body container-fluid">
             <div class="row">
@@ -48,39 +51,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <span class="fw-bolder h2" style="color: #D20000;">Sign Up</span><br />
                         <div id="registration">
                             <span class="fs-6 fw-bold">Registration</span><br>
-                            <p style="margin: 10px 0 0 0;">User type:</p>
-                            <div style="display: flex; flex-direction: row;">
+                            <p style="margin: 10px 0 0 0;">User Role:</p>
+                            <div class="d-flex">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="userRole" value="student" checked>
-                                    <label class="form-check-label" for="studentRole">
-                                        Student
-                                    </label>
+                                    <label class="form-check-label">Student</label>
                                 </div>
-                                <div class="form-check" style="margin-left: 10px;">
+                                <div class="form-check ms-2">
                                     <input class="form-check-input" type="radio" name="userRole" value="staff">
-                                    <label class="form-check-label" for="staffRole">
-                                        Staff
-                                    </label>
+                                    <label class="form-check-label">Staff</label>
+                                </div>
+                                <div class="form-check ms-2">
+                                    <input class="form-check-input" type="radio" name="userRole" value="admin">
+                                    <label class="form-check-label">Admin</label>
                                 </div>
                             </div>
-                            <div class="form-group mt-3">
 
-                                <label for="ID">Student/Staff ID</label>
-                                <input type="text" class="form-control" name="userID" placeholder="Enter ID">
+                            <div class="form-group mt-3">
+                                <label for="userID">User ID</label>
+                                <input type="text" class="form-control" name="userID" placeholder="Enter User ID" required>
                             </div>
+
                             <div class="form-group my-2">
                                 <label for="userPassword">Password</label>
-                                <input type="password" class="form-control" name="userPassword" placeholder="Password">
-                                <span id="passwordInstructions" class="form-text text-muted">Password should have minimum 8 characters</span>
+                                <input type="password" class="form-control" name="userPassword" placeholder="Password" required>
+                                <span id="passwordInstructions" class="form-text text-muted">Password should have a minimum of 8 characters</span>
                             </div>
                             <button type="submit" id="proceedBtn" name="submit" class="btn btn-primary">Proceed</button>
+                            <p class="small">If you have an account, <a href="">log in here</a>.</p>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
+
     <script src="../assets/js/script.js"></script>
-    </body>
+</body>
 
 </html>

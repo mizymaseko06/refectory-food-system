@@ -17,4 +17,4 @@ if (mysqli_query($conn, $db_check_query)) {
     die("Error creating/selecting database: " . mysqli_error($conn));
 }
 
-echo "Database connected successfully!";
+// echo "Database connected successfully!";

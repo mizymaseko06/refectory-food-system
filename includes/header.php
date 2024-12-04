@@ -24,10 +24,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="main-nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="profile.php" class="nav-link text-light">Profile</a></li>
-                        <li class="nav-item"><a href="" class="nav-link text-light">About Us</a></li>
-                        <li class="nav-item"><a href="" class="nav-link text-light">Logout</a></li>
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item btn btn-primary me-2" style="border-radius: 50%;"><i class="bi bi-cart"><!-- <span>My Cart</span> --></i></li>
+                        <li class="nav-item me-5" style="color: white"><i class="bi bi-wallet2"></i><span>E300.00</span></li>
+                        <li class="nav-item"><a href="" class="nav-link text-light"><i class="bi bi-box-arrow-right"></i></a></li>
                     </ul>
                 </div>
             <?php

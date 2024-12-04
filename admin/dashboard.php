@@ -96,8 +96,8 @@ include "../includes/menu.php";
                   <!-- Table Row 1 -->
                   <tr>
                     <td class="d-flex justify-content-center align-items-center"><img src="<?php echo $menu_item['image']; ?>" alt="Menu Item" class="img-fluid" style="width: 200px;"></td>
-                    <td><?php echo $menu_item['name']; ?></td>
-                    <td><?php echo $menu_item['price'] ?></td>
+                    <td><?php echo $menu_item['itemName']; ?></td>
+                    <td><?php echo $menu_item['itemPrice'] ?></td>
                     <td>
                       <button class="btn btn-warning btn-sm" onclick="editItem(1)">
                         <i class="bi bi-pencil"></i> Edit

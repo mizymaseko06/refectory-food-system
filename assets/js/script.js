@@ -48,3 +48,16 @@ navLinks.forEach(function (link) {
         sidebar.classList.remove('show');
     });
 });
+
+
+function increaseQty(button) {
+    const input = button.parentNode.querySelector('input');
+    input.value = parseInt(input.value) + 1;
+}
+
+function decreaseQty(button) {
+    const input = button.parentNode.querySelector('input');
+    if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+}

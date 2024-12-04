@@ -141,8 +141,19 @@
     flex-grow: 1;
 }
 
-@media (min-width: 769px){
-    #menu-toggle{
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* For Firefox */
+}
+
+@media (min-width: 769px) {
+    #menu-toggle {
         display: none;
     }
 }

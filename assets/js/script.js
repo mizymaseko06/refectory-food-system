@@ -61,3 +61,69 @@ function decreaseQty(button) {
         input.value = parseInt(input.value) - 1;
     }
 }
+
+const cart = [];
+const cartItemsContainer = document.getElementById("cartItems");
+const cartTotalElement = document.getElementById("cartTotal");
+
+// Example function to add an item to the cart
+function addToCart(item) {
+    const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...item, quantity: 1 });
+    }
+    updateCartModal();
+}
+
+// Update the modal content
+function updateCartModal() {
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.className = "d-flex justify-content-between align-items-center mb-3";
+        cartItem.innerHTML = `
+                <div>
+                    <strong>${item.name}</strong>
+                    <p class="mb-0">Price: $${item.price.toFixed(2)}</p>
+                    <p class="mb-0">Quantity: ${item.quantity}</p>
+                </div>
+                <button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button>
+            `;
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    cartTotalElement.textContent = total.toFixed(2);
+}
+
+// Remove an item from the cart
+function removeFromCart(id) {
+    const itemIndex = cart.findIndex(item => item.id === id);
+    if (itemIndex > -1) {
+        cart.splice(itemIndex, 1);
+    }
+    updateCartModal();
+}
+
+// Example checkout function
+document.getElementById("checkoutButton").addEventListener("click", () => {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+    } else {
+        alert("Checkout successful!");
+        cart.length = 0; // Clear the cart
+        updateCartModal();
+    }
+});
+
+// Add demo items to simulate adding products to the cart
+document.addEventListener("DOMContentLoaded", () => {
+    addToCart({ id: 1, name: "Item 1", price: 10.0 });
+    addToCart({ id: 2, name: "Item 2", price: 15.5 });
+});

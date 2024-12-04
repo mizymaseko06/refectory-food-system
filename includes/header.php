@@ -7,6 +7,7 @@
 
 <body>
     <header>
+
         <?php $current_file = basename($_SERVER['PHP_SELF']); ?>
         <nav class="navbar navbar-dark navbar-expand-lg container-fluid" id="navigation-bar" <?php if ($current_file != "index.php" && $current_file != "login.php" && $current_file != "sign_up.php") { ?>
             style="background-color: #001C81;" <?php } ?>>
@@ -25,7 +26,7 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="main-nav">
                     <ul class="navbar-nav d-flex align-items-center">
-                        <li class="nav-item btn btn-primary me-2" style="border-radius: 50%;"><i class="bi bi-cart"><!-- <span>My Cart</span> --></i></li>
+                        <li class="nav-item btn btn-primary me-2" style="border-radius: 50%;" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart"></i></li>
                         <li class="nav-item me-5" style="color: white"><i class="bi bi-wallet2"></i><span>E300.00</span></li>
                         <li class="nav-item"><a href="../includes/logout.php" class="nav-link text-light"><i class="bi bi-box-arrow-right"></i></a></li>
                     </ul>
@@ -36,3 +37,25 @@
 
         </nav>
     </header>
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                    <div class="text-end">
+                        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="checkoutButton">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>

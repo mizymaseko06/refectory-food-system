@@ -49,7 +49,7 @@
                         <!-- Cart items will be dynamically inserted here -->
                     </div>
                     <div class="text-end">
-                        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                        <strong>Total: E<span id="cartTotal">0.00</span></strong>
                     </div>
                 </div>
                 <div class="modal-footer">

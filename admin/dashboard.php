@@ -43,9 +43,6 @@ include "../includes/menu.php";
             <li class="nav-item">
               <a class="nav-link text-white" href="#" id="top-up-link">Top Up User Balance</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#" id="order-list-link">Order List</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -63,7 +60,7 @@ include "../includes/menu.php";
           <div id="add-items" class="content-section" style="display: block;">
             <h3>Add Items</h3>
 
-            <form action="add_item.php" method="POST" enctype="multipart/form-data" class="w-75 d-flex flex-column mt-5">
+            <form action="../includes/add_item.php" method="POST" enctype="multipart/form-data" class="w-75 d-flex flex-column mt-5">
               <div class="mb-3">
                 <label for="itemName" class="form-label">Item Name</label>
                 <input type="text" class="form-control" id="itemName" name="itemName" required>
@@ -71,6 +68,14 @@ include "../includes/menu.php";
               <div class="mb-3">
                 <label for="itemPrice" class="form-label">Price</label>
                 <input type="number" step="0.01" class="form-control" id="itemPrice" name="itemPrice" required>
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="category" required>
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Lunch">Lunch</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="itemImage" class="form-label">Upload Image</label>
@@ -116,10 +121,10 @@ include "../includes/menu.php";
 
           <div id="top-up" class="content-section" style="display:none;">
             <h3>Top Up User Balance</h3>
-            <form action="top_up_balance.php" class="w-75" method="POST">
+            <form action="../includes/top_up_balance.php" class="w-75" method="POST">
               <div class="mb-3">
-                <label for="studentId" class="form-label">ID</label>
-                <input type="number" class="form-control" id="studentId" name="studentId" required>
+                <label for="userID" class="form-label">ID</label>
+                <input type="number" class="form-control" id="userID" name="userID" required>
               </div>
               <div class="mb-3">
                 <label for="amount" class="form-label">Amount to Top Up</label>
@@ -127,46 +132,6 @@ include "../includes/menu.php";
               </div>
               <button type="submit" class="btn btn-primary">Top Up Balance</button>
             </form>
-          </div>
-
-          <div id="order-list" class="content-section" style="display:none;">
-            <h3>Order List</h3>
-            <table class="table table-striped table-bordered table-responsive-sm mt-5">
-              <thead>
-                <tr>
-                  <th>OrderID</th>
-                  <th>User ID</th>
-                  <th>Order items</th>
-                  <th>Time of order</th>
-                  <th>Total</th>
-                  <th>Status</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($menu_items as $menu_item) {
-                ?>
-                  <!-- Table Row 1 -->
-                  <tr>
-                    <td class="d-flex justify-content-center align-items-center"><img src="<?php echo $menu_item['image']; ?>" alt="Menu Item" class="img-fluid" style="width: 200px;"></td>
-                    <td><?php echo $menu_item['name']; ?></td>
-                    <td><?php echo $menu_item['price'] ?></td>
-                    <td>
-                      <button class="btn btn-warning btn-sm" onclick="editItem(1)">
-                        <i class="bi bi-pencil"></i> Edit
-                      </button>
-                      <button class="btn btn-danger btn-sm" onclick="deleteItem(1)">
-                        <i class="bi bi-trash"></i> Delete
-                      </button>
-                    </td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                <?php
-                } ?>
-
-              </tbody>
-            </table>
           </div>
         </div>
       </div>

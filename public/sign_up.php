@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <span id="passwordInstructions" class="form-text text-muted">Password should have a minimum of 8 characters</span>
                             </div>
                             <button type="submit" id="proceedBtn" name="submit" class="btn btn-primary">Proceed</button>
-                            <p class="small">If you have an account, <a href="">log in here</a>.</p>
+                            <p class="small">If you have an account, <a href="login.php">log in here</a>.</p>
                         </div>
                     </form>
                 </div>

@@ -26,6 +26,7 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="main-nav">
                     <ul class="navbar-nav d-flex align-items-center">
+                        <li><?php echo $_SESSION['email']?></li>
                         <li class="nav-item btn btn-primary me-2" style="border-radius: 50%;" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart"></i></li>
                         <li class="nav-item me-5" style="color: white"><i class="bi bi-wallet2"></i><span>E300.00</span></li>
                         <li class="nav-item"><a href="../includes/logout.php" class="nav-link text-light"><i class="bi bi-box-arrow-right"></i></a></li>

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($role == 'staff') {
         $school_email = $schoolID . '@uniswa.sz';
     } else {
-        $school_email = $schoolID . '@gmail.com'; // Generic email for admin
+        $school_email = $schoolID . '@refectory.com'; // Generic email for admin
     }
 
     // Insert into the Users table

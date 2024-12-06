@@ -1,4 +1,15 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])) {
+  // Redirect to login page if not logged in
+  header("Location: ../public/login.php");
+  exit();
+}
+// ensures that only admins access the page
+if($_SESSION['role'] != 'admin'){
+  header("Location: ../public/error.php");
+  exit();
+}
 include "../config/db_connect.php";
 include "../includes/menu.php";
 ?>
@@ -34,6 +45,7 @@ include "../includes/menu.php";
     <div class="d-flex" id="wrapper">
       <!-- Sidebar -->
       <div class="bg-dark text-white p-3" id="sidebar">
+        <small class="text-center" style="color: yellow"><?php echo $_SESSION['email']; ?></small>
         <h2 class="text-center mb-4">Dashboard Menu</h2>
         <nav>
           <ul class="nav flex-column">
@@ -43,6 +55,7 @@ include "../includes/menu.php";
             <li class="nav-item">
               <a class="nav-link text-white" href="#" id="top-up-link">Top Up User Balance</a>
             </li>
+            <li><a class="nav-link text-white" href="../includes/logout.php">Logout</a></li>
           </ul>
         </nav>
       </div>

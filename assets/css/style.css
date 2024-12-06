@@ -152,6 +152,10 @@ input[type=number] {
     /* For Firefox */
 }
 
+main{
+    min-height: 100vh;
+}
+
 @media (min-width: 769px) {
     #menu-toggle {
         display: none;

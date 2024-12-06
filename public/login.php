@@ -7,20 +7,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $schoolID = mysqli_real_escape_string($conn, $_POST['schoolID']);
     $password = $_POST['userPassword'];
 
-    $query = "SELECT schoolID, password FROM users WHERE schoolID=?";
+    // Modify query to include the role column
+    $query = "SELECT schoolID, password, role, email FROM users WHERE schoolID=?";
     if ($stmt = mysqli_prepare($conn, $query)) {
         mysqli_stmt_bind_param($stmt, "s", $schoolID);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
         if (mysqli_stmt_num_rows($stmt) == 1) {
-            mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash);
+            mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash, $role, $email_address);
             mysqli_stmt_fetch($stmt);
 
+            // Verify the password
             if (password_verify($password, $password_hash)) {
+                // Store session variables, including the user's role
                 $_SESSION['loggedin'] = true;
                 $_SESSION['id'] = $schoolID_db;
-                header("Location: index.php");
+                $_SESSION['role'] = $role; // Store the user's role
+                $_SESSION['email'] = $email_address;
+
+                // Redirect to the homepage or dashboard
+                if ($_SESSION['role'] == 'admin') {
+                    header("Location: ../admin/dashboard.php");
+                    exit();
+                } else {
+                    header("Location: index.php");
+                }
                 exit;
             } else {
                 echo "<script>alert('Invalid password');</script>";
@@ -35,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_close($conn);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,12 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div id="sign-up">
                             <span class="fs-6 fw-bold">Fill in your credentials</span><br>
                             <div class="form-group mt-3">
-                                <label for="ID">Student/Staff ID</label>
-                                <input type="text" class="form-control" name="schoolID" placeholder="Enter ID">
+                                <label for="ID">ID</label>
+                                <input type="text" class="form-control" name="schoolID" placeholder="Enter school ID" required>
                             </div>
                             <div class="form-group my-2">
                                 <label for="userPassword">Password</label>
-                                <input type="password" class="form-control" name="userPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="userPassword" placeholder="Password" required>
                                 <span id="passwordInstructions" class="form-text text-muted">Password should have minimum 8 characters</span>
                             </div>
                             <button type="submit" id="proceedBtn" name="submit" class="btn btn-primary">Sign In</button>

@@ -5,6 +5,12 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
+// ensures that only students and staff access the page
+if ($_SESSION['role'] == 'admin') {
+    header("Location: error.php");
+    exit();
+}
+
 include "../config/db_connect.php";
 include "../includes/menu.php";
 ?>

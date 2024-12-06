@@ -5,6 +5,11 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
+
+if ($_SESSION['role'] == 'admin') {
+    header("Location: error.php");
+    exit();
+}
 include '../config/db_connect.php';
 
 if (isset($_GET['search'])) {
@@ -27,7 +32,8 @@ if (isset($_GET['search'])) {
 <body>
     <main class="main-top-margin">
         <div class="container-sm">
-            <span class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue); ?>"</span>
+            <p class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue); ?>"</p>
+            <a href='index.php' class='btn btn-primary mt-3'>Return to Home</a>
             <div class="row card-deck justify-content-center">
                 <?php
                 if (isset($result) && mysqli_num_rows($result) > 0) {
@@ -58,6 +64,7 @@ if (isset($_GET['search'])) {
                 mysqli_close($conn);
                 ?>
             </div>
+
         </div>
     </main>
 

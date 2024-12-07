@@ -8,14 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['userPassword'];
 
     // Modify query to include the role column
-    $query = "SELECT schoolID, password, role, email FROM users WHERE schoolID=?";
+    $query = "SELECT schoolID, password, role, email, balance FROM users WHERE schoolID=?";
     if ($stmt = mysqli_prepare($conn, $query)) {
         mysqli_stmt_bind_param($stmt, "s", $schoolID);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
         if (mysqli_stmt_num_rows($stmt) == 1) {
-            mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash, $role, $email_address);
+            mysqli_stmt_bind_result($stmt, $schoolID_db, $password_hash, $role, $email_address, $balance);
             mysqli_stmt_fetch($stmt);
 
             // Verify the password
@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['id'] = $schoolID_db;
                 $_SESSION['role'] = $role; // Store the user's role
                 $_SESSION['email'] = $email_address;
+                $_SESSION['balance'] = $balance;
 
                 // Redirect to the homepage or dashboard
                 if ($_SESSION['role'] == 'admin') {

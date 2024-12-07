@@ -1,26 +1,17 @@
 <?php
-// delete_item.php - Handle deletion of menu item
+include "../config/db_connect.php";
 
-// Include database connection
-require_once '../config/db_connect.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['itemId'];
 
-// Check if ID is set in the request
-if (isset($_GET['id'])) {
-    $id = (int) $_GET['id'];
+    $query = "DELETE FROM items WHERE itemID = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $id);
 
-    // Prepare the SQL query to delete the item
-    $sql = "DELETE FROM menu_items WHERE id = $id";
-
-    // Execute the query
-    if (mysqli_query($conn, $sql)) {
-        // Redirect back to the page to refresh the table after deletion
-        header('Location: index.php');
-        exit;
+    if ($stmt->execute()) {
+        header("Location: ../admin/dashboard.php");
+        exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "Error deleting item.";
     }
 }
-
-// Close the database connection
-mysqli_close($conn);
-?>

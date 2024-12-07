@@ -1,21 +1,26 @@
 // JavaScript to handle sidebar toggle and section visibility
-document.getElementById('menu-toggle').addEventListener('click', function () {
+let menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', function () {
     var sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('show');
 });
 
 // Show content based on selected menu option
-document.getElementById('add-items-link').addEventListener('click', function () {
+let addItemsLink = document.getElementById('add-items-link');
+addItemsLink.addEventListener('click', function () {
     showContent('add-items');
+
 });
 
-document.getElementById('top-up-link').addEventListener('click', function () {
+let topUpLink = document.getElementById('top-up-link');
+topUpLink.addEventListener('click', function () {
     showContent('top-up');
 });
-
-document.getElementById('order-list-link').addEventListener('click', function () {
-    showContent('order-list');
+let viewItemsLink = document.getElementById('view-menu-link');
+viewItemsLink.addEventListener('click', function () {
+    showContent('view-menu-items');
 });
+
 
 // Function to show the relevant content section
 function showContent(sectionId) {

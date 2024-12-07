@@ -9,7 +9,7 @@
                 <span>This system is owned and operated by University of Eswatini. All content and services are for exclusive use by students and staff</span>
             </div>
 
-            <div class="col-sm-6 col-lg-3 pt-4">
+            <div class="col-sm-6 col-lg-3 pt-4 d-flex flex-column">
                 <h6 class="fw-bold" style="color: #FFFF00;">Information</h6>
                 <span>Privacy Policy</span>
                 <span>Terms of Service</span>

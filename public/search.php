@@ -32,8 +32,8 @@ if (isset($_GET['search'])) {
 <body>
     <main class="main-top-margin">
         <div class="container-sm">
-            <p class="fw-bold h1" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue); ?>"</p>
-            <a href='index.php' class='btn btn-primary mt-3'>Return to Home</a>
+            <a href='index.php' class='btn btn-primary mb-3'>Return to Home</a>
+            <p class="fw-bold h3" style="color: #D20000;">Search results for "<?php echo htmlspecialchars($searchValue); ?>"</p>
             <div class="row card-deck justify-content-center">
                 <?php
                 if (isset($result) && mysqli_num_rows($result) > 0) {

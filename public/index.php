@@ -29,7 +29,7 @@ include "../includes/menu.php";
                     <span class="fw-bolder h1" style="color: #FFFF00;">Craving something to eat from the refectory?</span>
                     <p class="lead text-light">Your favourite meals are just a click away</p>
                     <form action="search.php" method="GET" class="d-flex justify-content-center">
-                        <label for="search" class="form-label"><input name="search" type="text" class="form-control" id="search" placeholder="Search here"></label>
+                        <label for="search" class="form-label"><input name="search" type="text" class="form-control" id="search" placeholder="What do you want to eat?"></label>
 
                         <button class="btn btn-primary h-100" type="submit"><i class="bi bi-search"></i></button>
                     </form>
